@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+# puts "Destroy users"
+# User.destroy_all if Rails.env.development?
+Flat.destroy_all
+User.destroy_all
+puts 'creating 10 users and flats'
+10.times do
+  user = User.create!(email: Faker::Internet.email, password: '123456')
+  flat = Flat.new(description: Faker::Esport.event, title: Faker::Artist.name, user_id: user.id)
+  flat.save
+end
