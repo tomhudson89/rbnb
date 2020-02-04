@@ -7,16 +7,19 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <script src="https://kit.fontawesome.com/f6d10447eb.js" crossorigin="anonymous"></script>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
 
-     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
   </body>
 </html>
 
