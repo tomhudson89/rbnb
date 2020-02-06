@@ -1,7 +1,14 @@
 class FlatsController < ApplicationController
   before_action :find_flat, only: [ :show, :edit ]
   def index
-    @flats = Flat.all
+    @flats = Flat.geocoded
+
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def new
@@ -21,6 +28,7 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def update
