@@ -1,0 +1,63 @@
+.promotion-banner {
+  background-color: #C1F4B1;
+  margin-top: 50px;
+  div {
+    padding-left: 30px;
+    color: $gray;
+  }
+
+}
+
+  .star-icon {
+    font-size: 60px;
+    padding-left: 25px;
+    color: $green;
+    border: 1px;
+    position: relative;
+    left: 15px;
+    top:10px;
+  }
+
+
+.rare-find {
+  background-color: $light-gray;
+  i {
+    position: relative;
+    left: 150px;
+    color: $gray;
+  }
+}
+
+.booking-info {
+  margin-top: 25px;
+}
+
+.about-your-trip {
+  p {
+    margin-bottom: 6px;
+  }
+}
+
+.house-rules {
+  margin-top: 40px;
+  background-color: #F9F9F9;
+  border-radius: 10px;
+
+  i {
+    color: #18EBBD;
+  }
+
+}
+
+.rules {
+  p, i {
+    border-radius: 1px solid #EFEFEF;
+    margin: 25px auto;
+  }
+
+}
+
+.submit-button {
+  position: relative;
+  left: 100px;
+}
