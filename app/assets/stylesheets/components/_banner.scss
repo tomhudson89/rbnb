@@ -1,7 +1,9 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 200px 0;
+  padding: 150px 0;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('banner.jpg');
+  padding: 200px 0
 }
 
 .banner h1 {
@@ -17,4 +19,17 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.host-banner {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('host-banner.jpg');
+}
+
+.text-host-banner h1, p  {
+  text-align: center;
+  color: white;
+}
+
+.host-link {
+  text-decoration: none !important;
 }
