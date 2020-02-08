@@ -1,6 +1,5 @@
-<h1>Flats#index</h1>
 <p>Find me in app/views/flats/index.html.erb</p>
-<div class="container">
+<div class="main-container">
   <div class="cards">
     <% @flats.each do |flat| %>
       <%= link_to(flat_path(flat)) do %>
@@ -9,16 +8,25 @@
           <div class="card-trip-infos">
             <div>
               <h2><%= flat.title %></h2>
-              <p><%= flat.description %></p>
+              <p><%= flat.address.truncate(30) %></p>
             </div>
-            <h2 class="card-trip-pricing"><%= flat.price_per_night %></h2>
+            <h2 class="card-trip-pricing">£<%= flat.price_per_night %></h2>
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
         </div>
       <% end %>
     <% end %>
-
   </div>
+  <div class="map-card">
+    <div
+    id="map"
+    style="width: 400px;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
+
 </div>
 
 

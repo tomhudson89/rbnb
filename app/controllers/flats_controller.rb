@@ -5,7 +5,13 @@ class FlatsController < ApplicationController
     if params[:city].present?
       @flats = Flat.where("address ILIKE ?", "%#{params[:city]}%")
     else
-      @flats = Flat.all
+      @flats = Flat.geocoded
+
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
     end
   end
 
@@ -26,6 +32,7 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def update
