@@ -1,2 +1,107 @@
 <h1>Bookings#edit</h1>
 <p>Find me in app/views/bookings/edit.html.erb</p>
+
+<div class="container">
+
+  <div class="promotion-banner d-flex" style="background-color: $green;">
+    <i class="far fa-star star-icon"></i>
+    <div>
+      <p>This flat is a rare gem!</p>
+      <p>You´re lucky you have been able to book it at this rate.</p>
+    </div>
+  </div>
+
+  <div class="row booking-info">
+    <div class="col-md-6">
+      <div class="about-your-trip">
+        <h2>About your trip</h2>
+        <br>
+        <p>Who is coming?</p>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Number of guests
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">1 guest</a>
+            <a class="dropdown-item" href="#">2 guests</a>
+            <a class="dropdown-item" href="#">3 guests</a>
+          </div>
+        </div>
+        <form>
+          <br>
+          <br>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Say hello to your guests and tell them why you are coming:</label>
+            <textarea class="form-control" id="messagetoguests" rows="3"></textarea>
+          </div>
+        </form>
+        <div class="house-rules">
+          <p class="text-center"><strong>XXX´s House rules</strong></p>
+          <div class="container justify-content-between">
+            <div class="rules">
+              <div class=" d-flex">
+                <p>No smoking</p>
+                <i class="fas fa-check"></i>
+              </div>
+              <div class=" d-flex">
+                <p>No smoking</p>
+                <i class="fas fa-check"></i>
+              </div>
+              <div class=" d-flex">
+                <p>No smoking</p>
+                <i class="fas fa-check"></i>
+              </div>
+              <div class=" d-flex">
+                <p>No smoking</p>
+                <i class="fas fa-check"></i>
+              </div>
+            </div>
+          </div>
+        </div class="text-center">
+        <%= link_to "Book", root_path, class: "btn btn-primary mt-3 px-5 submit-button" %>
+      </div>
+    </div>
+  <div class="col-md-5 offset-md-1">
+    <div class="flat-info-card">
+    <div class="card-trip card-trip-booking">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <p>Hosted by XXX</p>
+          <h2>Title here</h2>
+          <p>Address here</p>
+        </div>
+        <h2 class="card-trip-pricing">£99.99</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+      <hr>
+      <div class="card-trip-infos">
+        <div class="checkout">
+          <p>Checkin:</p>
+          <p>Date</p>
+        </div>
+        <div class="checkin">
+          <p>Checkout:</p>
+          <p>Date</p>
+        </div>
+      </div>
+      <hr>
+      <div class="card-trip-infos">
+        <div class="price-items">
+          <p>$29 x 4 nights</p>
+          <p>Service fee</p>
+          <p>Occupancy taxes</p>
+          <br>
+          <p><strong>Total:</strong></p>
+        </div>
+        <div class="price-per-item">
+          <p>$29</p>
+          <p>$29</p>
+          <p>$29</p>
+          <br>
+          <p><strong>$100</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
