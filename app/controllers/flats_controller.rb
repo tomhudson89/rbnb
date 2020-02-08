@@ -18,7 +18,7 @@ class FlatsController < ApplicationController
     @flat = Flat.new(title: params[:title], address: params[:address], guests: params[:guests], bedrooms: params[:bedrooms], beds: params[:beds], description: params[:description], price_per_night: params[:price_per_night])
     @flat.user = current_user
     if @flat.save
-      redirect_to flat_path(@flat)
+      redirect_to root_path
     else
       render :new
     end
