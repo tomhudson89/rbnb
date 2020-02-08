@@ -1,2 +1,64 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <div class="container">
+    <div class="search-form">
+      <h1>Book unique places to stay and things to do.</h1>
+      <form action="/flats" class="mt-2">
+        <div class="form-group fg">
+          <label for="where">Where</label>
+          <input type="input" placeholder="Anywhere"class="form-control" id="location">
+        </div>
+        <div class="form-row fg justify-content-between">
+          <div class="col-md-6">
+            <label for="checkin">Checkin</label>
+            <input type="date" class="form-control" id="checkin">
+          </div>
+          <div class="col-md-6">
+            <label for="checkout">Checkout</label>
+            <input type="date" class="form-control" id="checkout">
+          </div>
+        </div>
+        <div class="form-group fg">
+            <label for="guests">Number of guests</label>
+            <input type="input" class="form-control" id="guests">
+          </div>
+        <div class="search-button d-flex">
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container">
+  <h2 class="mb-3" >Places to stay around the world</h2>
+  <div class="cards">
+    <% @flats.first(9).each do |flat| %>
+      <%= link_to(flat_path(flat)) do %>
+        <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= flat.title %></h2>
+              <p><%= flat.description %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= flat.price_per_night %></h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <%= link_to new_flat_path, class: "host-link" do %>
+    <div class=" banner host-banner">
+      <div class="text-host-banner"></div>
+        <h1>Become a host and start earning today</h1>
+        <p>Join the fastest growing network of tiny flats</p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
