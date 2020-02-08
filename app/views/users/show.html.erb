@@ -1,2 +1,13 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
+
+<div class="">
+  <h3>My Bookings</h3>
+  <ul>
+    <% current_user.bookings.each do |booking| %>
+      <li>
+        <%= booking.start_date %>
+      </li>
+    <% end %>
+  </ul>
+</div>
