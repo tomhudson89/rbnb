@@ -1,6 +1,6 @@
 <h1>Flats#index</h1>
 <p>Find me in app/views/flats/index.html.erb</p>
-<div class="container">
+<div class="main-container">
   <div class="cards">
     <% @flats.each do |flat| %>
       <%= link_to(flat_path(flat)) do %>
@@ -17,8 +17,17 @@
         </div>
       <% end %>
     <% end %>
-
   </div>
+  <div class="map-card">
+    <div
+    id="map"
+    style="width: 400px;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
+
 </div>
 
 
