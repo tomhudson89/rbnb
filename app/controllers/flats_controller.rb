@@ -7,11 +7,12 @@ class FlatsController < ApplicationController
     else
       @flats = Flat.geocoded
 
-    @markers = @flats.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
+      @markers = @flats.map do |flat|
+        {
+          lat: flat.latitude,
+          lng: flat.longitude
+        }
+      end
     end
   end
 
