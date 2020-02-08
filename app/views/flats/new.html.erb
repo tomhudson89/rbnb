@@ -1,16 +1,5 @@
 
-<div class="host-banner">
-  <div class="search-form host-search-form">
-    <h1>Become a host and start earning today!</h1>
-    <%= simple_form_for @flat do |f| %>
-      <%= f.input :title %>
-      <%= f.input :address %>
-      <%= f.input :guests %>
-      <%= f.input :bedrooms %>
-      <%= f.input :beds %>
-      <%= f.input :description %>
-      <%= f.input :price_per_night %>
-      <%= f.submit "add a review", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+<div class="centering">
+  <%= render 'form', flat: @flat %>
+
 </div>
