@@ -13,14 +13,32 @@
 Caerphilly melted cheese queso. Squirty cheese the big cheese emmental babybel cut the cheese goat babybel blue castello. Cheese on toast melted cheese caerphilly brie chalk and cheese cheesecake cheeseburger bocconcini. Bocconcini bocconcini ricotta cheese and wine airedale ricotta say cheese croque monsieur. Everyone loves squirty cheese who moved my cheese ricotta chalk and cheese stinking bishop manchego feta. Cut the cheese camembert de normandie cheese triangles red leicester stinking bishop stinking bishop gouda croque monsieur. Roquefort queso pepper jack feta mascarpone parmesan cheese slices emmental. Hard cheese paneer when the cheese comes out everybody's happy goat fromage roquefort smelly cheese halloumi. Cauliflower cheese lancashire halloumi boursin dolcelatte airedale.</p></div>
 
 
-  <div class="booker"><p>Amount per Night</p>
-  <p>Review</p>
-  <p>Dates</p>
-  <p>Guests</p>
-  <p>Cancelation Policy</p>
-  <p>Show Price Details</p>
-  <p>Total</p>
-  <button type="button" class="btn btn-danger">Reserve</button>
+  <div class="booker">
+    <div class="form-group fg">
+              <label for="Reviews">Amount per Night <strong>£<%= @flat.price_per_night %></strong></label>
+    </div>
+    <div class="form-group fg">
+              <label for="Reviews">Reviews <strong>****</strong></label>
+    </div>
+
+    <div class="form-row fg justify-content-between">
+          <div class="col-md-6">
+            <label for="checkin">Checkin</label>
+            <input type="date" class="form-control" id="checkin">
+          </div>
+          <div class="col-md-6">
+            <label for="checkout">Checkout</label>
+            <input type="date" class="form-control" id="checkout">
+          </div>
+    </div>
+          <div class="form-group fg">
+            <label for="guests">Number of guests</label>
+            <input type="input" class="form-control" id="guests">
+          </div>
+    <p>Cancelation Policy</p>
+    <p>Show Price Details</p>
+    <p><strong>Total</strong></p>
+    <button type="button" class="btn btn-danger">Reserve</button>
   </div>
 
 
