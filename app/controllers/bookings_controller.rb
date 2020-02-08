@@ -13,8 +13,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(bookings_params)
+    @booking.user = current_user
+    @booking.flat = Flat.find(params[:flat_id])
     if @booking.save!
-      redirect_to flats_path
+      redirect_to edit_booking_path(@booking)
     else
       render :new
     end
@@ -30,10 +32,14 @@ class BookingsController < ApplicationController
   private
 
   def bookings_params
-    params.require(:booking).permit(:user, :flat, :start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def set_flat
+    @flat = Flat.find(params[:flats_id])
   end
 end
