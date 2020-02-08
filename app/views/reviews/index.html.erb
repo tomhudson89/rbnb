@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>List of Reviews</h1>
+    <p>Reviews from previous guests</p>
+    <%= link_to "Add a review", new_review_path, class: "btn btn-primary btn-lg" %>
+
+    <% @reviews.each do |review| %>
+      <h2><%= review.title %></h2>
+        <%= link_to "", review_path(booking), class: 'card-link' %>
+    <% end %>
+</div>
