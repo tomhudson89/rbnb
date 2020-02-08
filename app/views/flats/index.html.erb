@@ -1,4 +1,3 @@
-<h1>Flats#index</h1>
 <p>Find me in app/views/flats/index.html.erb</p>
 <div class="main-container">
   <div class="cards">
@@ -9,9 +8,9 @@
           <div class="card-trip-infos">
             <div>
               <h2><%= flat.title %></h2>
-              <p><%= flat.description %></p>
+              <p><%= flat.address.truncate(30) %></p>
             </div>
-            <h2 class="card-trip-pricing"><%= flat.price_per_night %></h2>
+            <h2 class="card-trip-pricing">£<%= flat.price_per_night %></h2>
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
         </div>
