@@ -6,14 +6,8 @@ class FlatsController < ApplicationController
       @flats = Flat.where("address ILIKE ?", "%#{params[:city]}%")
     else
       @flats = Flat.geocoded
-
-      @markers = @flats.map do |flat|
-        {
-          lat: flat.latitude,
-          lng: flat.longitude
-        }
-      end
     end
+    set_markers
   end
 
   def new
@@ -48,5 +42,14 @@ class FlatsController < ApplicationController
 
   def find_flat
     @flat = Flat.find(params[:id])
+  end
+
+  def set_markers
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 end
