@@ -1,20 +1,39 @@
+<% if @flat.user_id == current_user %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1578448421987-e7ee85c8bdf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+      <div class="container">
+        <button type="button" class="btn btn-light float-right">See More Photos</button>
+      </div>
+    </div>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1578448421987-e7ee85c8bdf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
-  <div class="container">
-    <button type="button" class="btn btn-light float-right">See More Photos</button>
-  </div>
-</div>
+    <div class="main-container">
+      <div class="info"><h1><%= @flat.title %></h1>
+      <p><%= @flat.description %></p>
+      <p>blablabla cheese pecorino. Cheese and biscuits mozzarella caerphilly bavarian bergkase macaroni cheese monterey jack say cheese squirty cheese. Gouda stilton manchego st. agur blue cheese swiss manchego brie cheese and wine. Goat cream cheese red leicester pecorino queso when the cheese comes out everybody's happy caerphilly swiss. Port-salut stilton chalk and cheese brie blue castello emmental smelly cheese gouda. Taleggio everyone loves feta goat taleggio fromage fromage frais boursin. Cheesy feet rubber cheese melted cheese mascarpone airedale st. agur blue cheese cheese slices blue castello. Cheesy grin cheese strings gouda stilton ricotta paneer cow halloumi. Emmental smelly cheese red leicester cheese and biscuits monterey jack mozzarella who moved my cheese queso. Who moved my cheese st. agur blue cheese cheesy feet chalk and cheese fromage.
 
-<div class="main-container">
-  <div class="info"><h1><%= @flat.title %></h1>
-  <p><%= @flat.description %></p>
-  <p>Parmesan macaroni cheese pecorino. Cheese and biscuits mozzarella caerphilly bavarian bergkase macaroni cheese monterey jack say cheese squirty cheese. Gouda stilton manchego st. agur blue cheese swiss manchego brie cheese and wine. Goat cream cheese red leicester pecorino queso when the cheese comes out everybody's happy caerphilly swiss. Port-salut stilton chalk and cheese brie blue castello emmental smelly cheese gouda. Taleggio everyone loves feta goat taleggio fromage fromage frais boursin. Cheesy feet rubber cheese melted cheese mascarpone airedale st. agur blue cheese cheese slices blue castello. Cheesy grin cheese strings gouda stilton ricotta paneer cow halloumi. Emmental smelly cheese red leicester cheese and biscuits monterey jack mozzarella who moved my cheese queso. Who moved my cheese st. agur blue cheese cheesy feet chalk and cheese fromage.
-
-Caerphilly melted cheese queso. Squirty cheese the big cheese emmental babybel cut the cheese goat babybel blue castello. Cheese on toast melted cheese caerphilly brie chalk and cheese cheesecake cheeseburger bocconcini. Bocconcini bocconcini ricotta cheese and wine airedale ricotta say cheese croque monsieur. Everyone loves squirty cheese who moved my cheese ricotta chalk and cheese stinking bishop manchego feta. Cut the cheese camembert de normandie cheese triangles red leicester stinking bishop stinking bishop gouda croque monsieur. Roquefort queso pepper jack feta mascarpone parmesan cheese slices emmental. Hard cheese paneer when the cheese comes out everybody's happy goat fromage roquefort smelly cheese halloumi. Cauliflower cheese lancashire halloumi boursin dolcelatte airedale.</p></div>
+    Caerphilly melted cheese queso. Squirty cheese the big cheese emmental babybel cut the cheese goat babybel blue castello. Cheese on toast melted cheese caerphilly brie chalk and cheese cheesecake cheeseburger bocconcini. Bocconcini bocconcini ricotta cheese and wine airedale ricotta say cheese croque monsieur. Everyone loves squirty cheese who moved my cheese ricotta chalk and cheese stinking bishop manchego feta. Cut the cheese camembert de normandie cheese triangles red leicester stinking bishop stinking bishop gouda croque monsieur. Roquefort queso pepper jack feta mascarpone parmesan cheese slices emmental. Hard cheese paneer when the cheese comes out everybody's happy goat fromage roquefort smelly cheese halloumi. Cauliflower cheese lancashire halloumi boursin dolcelatte airedale.</p></div>
 
 
-  <div class="booker">
-      <%= render 'bookings/form', booking: Booking.new, flat: @flat %>
-  </div>
+      <div class="booker">
+          <%= render 'bookings/form', booking: Booking.new, flat: @flat %>
+      </div>
+    </div>
+  <% else %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('success.jpg');">
+        <div class="container">
+          <button type="button" class="btn btn-light float-right">Back to home</button>
+        </div>
+      </div>
 
-</div>
+      <div class="main-container">
+        <div class="info"><h1><%= @flat.title %></h1>
+        <p><%= @flat.description %></p>
+        <p>Parmesan macaroni cheese pecorino. Cheese and biscuits mozzarella caerphilly bavarian bergkase macaroni cheese monterey jack say cheese squirty cheese. Gouda stilton manchego st. agur blue cheese swiss manchego brie cheese and wine. Goat cream cheese red leicester pecorino queso when the cheese comes out everybody's happy caerphilly swiss. Port-salut stilton chalk and cheese brie blue castello emmental smelly cheese gouda. Taleggio everyone loves feta goat taleggio fromage fromage frais boursin. Cheesy feet rubber cheese melted cheese mascarpone airedale st. agur blue cheese cheese slices blue castello. Cheesy grin cheese strings gouda stilton ricotta paneer cow halloumi. Emmental smelly cheese red leicester cheese and biscuits monterey jack mozzarella who moved my cheese queso. Who moved my cheese st. agur blue cheese cheesy feet chalk and cheese fromage.
+
+      Caerphilly melted cheese queso. Squirty cheese the big cheese emmental babybel cut the cheese goat babybel blue castello. Cheese on toast melted cheese caerphilly brie chalk and cheese cheesecake cheeseburger bocconcini. Bocconcini bocconcini ricotta cheese and wine airedale ricotta say cheese croque monsieur. Everyone loves squirty cheese who moved my cheese ricotta chalk and cheese stinking bishop manchego feta. Cut the cheese camembert de normandie cheese triangles red leicester stinking bishop stinking bishop gouda croque monsieur. Roquefort queso pepper jack feta mascarpone parmesan cheese slices emmental. Hard cheese paneer when the cheese comes out everybody's happy goat fromage roquefort smelly cheese halloumi. Cauliflower cheese lancashire halloumi boursin dolcelatte airedale.</p></div>
+
+
+        <div class="booker">
+            <%= render 'bookings/form', booking: Booking.new, flat: @flat %>
+        </div>
+      </div>
+  <% end %>
