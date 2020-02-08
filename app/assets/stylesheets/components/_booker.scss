@@ -1,5 +1,6 @@
 .booker {
   top: 0px;
+  text-align: left;
   align-self: flex-start;
   position: sticky;
   padding: 50px;
@@ -24,7 +25,7 @@
 }
 
 .info {
-  align: left;
+  text-align: left;
   background: white;
   align: center;
   padding: 50px;
@@ -38,5 +39,6 @@
 
 p {
   color: black;
+  text-align: justify;
 
 }

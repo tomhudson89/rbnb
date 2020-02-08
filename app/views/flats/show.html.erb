@@ -14,41 +14,7 @@ Caerphilly melted cheese queso. Squirty cheese the big cheese emmental babybel c
 
 
   <div class="booker">
-    <div class="form-group fg">
-              <label for="Reviews">Amount per Night <strong>£<%= @flat.price_per_night %></strong></label>
-    </div>
-    <div class="form-group fg">
-              <label for="Reviews">Reviews <strong>****</strong></label>
-    </div>
-
-    <div class="form-row fg justify-content-between">
-          <div class="col-md-6">
-            <label for="checkin">Checkin</label>
-            <input type="date" class="form-control" id="checkin">
-          </div>
-          <div class="col-md-6">
-            <label for="checkout">Checkout</label>
-            <input type="date" class="form-control" id="checkout">
-          </div>
-    </div>
-          <div class="form-group fg">
-            <label for="guests">Number of guests</label>
-            <input type="input" class="form-control" id="guests">
-          </div>
-    <p>Cancelation Policy</p>
-    <p>Show Price Details</p>
-    <p><strong>Total</strong></p>
-    <button type="button" class="btn btn-danger">Reserve</button>
+      <%= render 'bookings/form', booking: Booking.new, flat: @flat %>
   </div>
-
-  <div>
-
-    <%= render 'bookings/form', booking: Booking.new, flat: @flat %>
-  </div>
-
-
-
 
 </div>
-
-

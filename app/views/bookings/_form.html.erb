@@ -1,6 +1,16 @@
 
 <%= simple_form_for [flat, booking] do |b| %>
+    <div class="form-group fg">
+      <label for="Amount">Amount per Night <strong>£<%= @flat.price_per_night %></strong></label>
+    </div>
+    <div class="form-group fg">
+        <label for="Reviews">Reviews <strong>****</strong></label>
+    </div>
   <%= b.input :start_date %>
   <%= b.input :end_date %>
-  <%= b.submit "Book your stay", class: "btn btn-primary" %>
+  <%= b.submit "Book your stay", class: "btn btn-danger" %>
 <% end %>
+
+
+
+
