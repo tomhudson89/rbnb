@@ -2,7 +2,11 @@ class FlatsController < ApplicationController
   before_action :find_flat, only: [ :show, :edit ]
   skip_before_action :authenticate_user!, only: :index
   def index
-    @flats = Flat.all
+    if params[:city].present?
+      @flats = Flat.where("address ILIKE ?", "%#{params[:city]}%")
+    else
+      @flats = Flat.all
+    end
   end
 
   def new
