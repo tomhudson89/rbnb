@@ -5,7 +5,7 @@
   padding: 25px;
 
   h1 {
-    color: #484848;
+    color: $gray;
     font-size: 24px;
     text-align: left;
   }
@@ -35,4 +35,10 @@
 h2 {
   color: $gray;
   font-size: 24px;
+}
+
+.host-search-form {
+  height: 400px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
