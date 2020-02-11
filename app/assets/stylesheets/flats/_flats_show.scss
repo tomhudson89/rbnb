@@ -1,0 +1,30 @@
+.info {
+  h1 {
+    font-size: 32px;
+    border-bottom: 1px solid $light-gray;
+    font-weight: bold;
+  }
+}
+
+.info {
+  h2 {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  p {
+    font-size: 24px;
+    text-align: left;
+  }
+}
+
+.avatar-image {
+  width: 35px;
+  height: 35px;
+}
+
+.booker {
+  p {
+    font-size: 16px;
+  }
+}
