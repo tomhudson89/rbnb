@@ -1,7 +1,7 @@
 <div class="banner">
   <div class="container">
     <div class="search-form">
-      <h1>Book unique places to stay and things to do.</h1>
+      <h1>Book tiny places to stay and things to do.</h1>
       <form action='/flats' method="get" class="mt-2">
         <div class="form-group fg">
           <label for="where">Where</label>
@@ -33,7 +33,7 @@
 <br>
 <br>
 <div class="container">
-  <h2 class="mb-3" >Places to stay around the world</h2>
+  <h2 class="mb-3" >Tiny places to stay around the world</h2>
   <div class="cards">
     <% @flats.first(9).each do |flat| %>
       <%= link_to(flat_path(flat)) do %>
@@ -56,8 +56,8 @@
   <br>
   <%= link_to new_flat_path, class: "host-link" do %>
     <div class=" banner host-banner">
-      <div class="text-host-banner"></div>
-        <h1>Become a host and start earning today</h1>
+      <div class="text-host-banner">
+        <h1>Become a tiny host and start earning today</h1>
         <p>Join the fastest growing network of tiny flats</p>
       </div>
     </div>
