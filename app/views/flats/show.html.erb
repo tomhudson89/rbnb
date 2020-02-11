@@ -1,17 +1,43 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @flat.photos.first.key %>);">
+  <div class="container">
+    <button type="button" class="btn btn-danger float-right">Go to my profile</button>
+  </div>
+</div>
 <% if @flat.user_id == current_user.id %>
-<!--     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @flat.photos %>);">
+  <div class="main-container">
+    <div class="info">
+      <h1 class="pb-4">Congratulations! Your tiny house has been added!</h1>
+      <br>
+      <h2 class="pb-4"><%= @flat.title %></h2>
+      <br>
+      <p><%= @flat.description %></p>
+      <br>
+      <p><%= @flat.address %></p>
+    </div>
+    <div class="booker">
       <div class="container">
-        <button type="button" class="btn btn-light float-right">See More Photos</button>
-      </div>
-    </div> -->
-
-
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @flat.photos.first.key %>);">
-        <div class="container">
-          <button type="button" class="btn btn-danger float-right">Go to my profile</button>
+        <p> <strong>Sleeping arrangements</strong></p>
+        <div class="d-flex">
+          <i></i>
+          <p>Number of beds: <%= @flat.beds %> </p>
+        </div>
+        <div class="d-flex">
+          <i></i>
+          <p>Number of bedrooms: <%= @flat.bedrooms %> </p>
+        </div>
+        <div class="d-flex border-bottom">
+          <i></i>
+          <p>>Max number of guests: <%= @flat.guests %> </p>
+        </div>
+        <p class="pt-3"> <strong>Pricing</strong></p>
+        <div class="d-flex">
+          <i></i>
+          <p>Price per night: $<%= @flat.price_per_night %></p>
         </div>
       </div>
-
+    </div>
+  </div>
+  <% else %>
     <div class="main-container">
       <div class="info">
         <h1 class="pb-4">Congratulations! Your tiny house has been added!</h1>
@@ -23,48 +49,7 @@
         <p><%= @flat.address %></p>
       </div>
       <div class="booker">
-        <div class="container">
-          <p> <strong>Sleeping arrangements</strong></p>
-          <div class="d-flex">
-            <i></i>
-            <p>Number of beds: <%= @flat.beds %> </p>
-          </div>
-          <div class="d-flex">
-            <i></i>
-            <p>Number of bedrooms: <%= @flat.bedrooms %> </p>
-          </div>
-          <div class="d-flex border-bottom">
-            <i></i>
-            <p>>Max number of guests: <%= @flat.guests %> </p>
-          </div>
-          <p class="pt-3"> <strong>Pricing</strong></p>
-          <div class="d-flex">
-            <i></i>
-            <p>Price per night: $<%= @flat.price_per_night %></p>
-          </div>
-        </div>
-
-
-
+          <%= render 'bookings/form', booking: Booking.new, flat: @flat %>
       </div>
     </div>
-  <% else %>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('success.jpg');">
-        <div class="container">
-          <button type="button" class="btn btn-light float-right">Back to home</button>
-        </div>
-      </div>
-
-      <div class="main-container">
-        <div class="info"><h1><%= @flat.title %></h1>
-        <p><%= @flat.description %></p>
-        <p>Parmesan macaroni cheese pecorino. Cheese and biscuits mozzarella caerphilly bavarian bergkase macaroni cheese monterey jack say cheese squirty cheese. Gouda stilton manchego st. agur blue cheese swiss manchego brie cheese and wine. Goat cream cheese red leicester pecorino queso when the cheese comes out everybody's happy caerphilly swiss. Port-salut stilton chalk and cheese brie blue castello emmental smelly cheese gouda. Taleggio everyone loves feta goat taleggio fromage fromage frais boursin. Cheesy feet rubber cheese melted cheese mascarpone airedale st. agur blue cheese cheese slices blue castello. Cheesy grin cheese strings gouda stilton ricotta paneer cow halloumi. Emmental smelly cheese red leicester cheese and biscuits monterey jack mozzarella who moved my cheese queso. Who moved my cheese st. agur blue cheese cheesy feet chalk and cheese fromage.
-
-      Caerphilly melted cheese queso. Squirty cheese the big cheese emmental babybel cut the cheese goat babybel blue castello. Cheese on toast melted cheese caerphilly brie chalk and cheese cheesecake cheeseburger bocconcini. Bocconcini bocconcini ricotta cheese and wine airedale ricotta say cheese croque monsieur. Everyone loves squirty cheese who moved my cheese ricotta chalk and cheese stinking bishop manchego feta. Cut the cheese camembert de normandie cheese triangles red leicester stinking bishop stinking bishop gouda croque monsieur. Roquefort queso pepper jack feta mascarpone parmesan cheese slices emmental. Hard cheese paneer when the cheese comes out everybody's happy goat fromage roquefort smelly cheese halloumi. Cauliflower cheese lancashire halloumi boursin dolcelatte airedale.</p></div>
-
-
-        <div class="booker">
-            <%= render 'bookings/form', booking: Booking.new, flat: @flat %>
-        </div>
-      </div>
   <% end %>
