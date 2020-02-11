@@ -15,10 +15,10 @@ class FlatsController < ApplicationController
   end
 
   def create
-    @flat = Flat.new(title: params[:title], address: params[:address], guests: params[:guests], bedrooms: params[:bedrooms], beds: params[:beds], description: params[:description], price_per_night: params[:price_per_night])
+    @flat = Flat.new(flat_params)
     @flat.user = current_user
     if @flat.save
-      redirect_to root_path
+      redirect_to flat_path(@flat)
     else
       render :new
     end
@@ -38,7 +38,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:user_id, :address, :guests, :beds, :description, :price_per_night, :title, :photos)
+    params.require(:flat).permit(:user_id, :address, :guests, :beds, :bedrooms, :description, :price_per_night, :title, photos: [])
   end
 
   def find_flat
