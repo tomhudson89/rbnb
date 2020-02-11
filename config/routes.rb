@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit]
 
 
 
