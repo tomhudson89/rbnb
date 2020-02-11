@@ -29,7 +29,9 @@ Flat.destroy_all
 User.destroy_all
 puts 'creating 5 users and flats'
 
-  counter = 0
+
+counter = 0
+
 5.times do
   user_file = URI.open("#{user_photos[counter]}")
   user = User.create!(email: Faker::Internet.email, password: '123456')
