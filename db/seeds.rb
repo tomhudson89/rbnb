@@ -29,6 +29,7 @@ Flat.destroy_all
 User.destroy_all
 puts 'creating 5 users and flats'
 
+
 counter = 0
 
 5.times do
