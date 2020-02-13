@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="promotion-banner d-flex" style="background-color: $green;">
     <i class="far fa-star star-icon"></i>
     <div>
@@ -65,21 +64,21 @@
       <div class="card-trip-infos">
         <div>
           <p>Hosted by XXX</p>
-          <h2>Title here</h2>
-          <p>Address here</p>
+          <h2><%= @booking.flat.title %></h2>
+          <p><%= @booking.flat.address %></p>
         </div>
-        <h2 class="card-trip-pricing">£99.99</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <h2 class="card-trip-pricing">$<%= @booking.flat.price_per_night %></h2>
+        <%= cl_image_tag @booking.user.photo.key, class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </div>
       <hr>
       <div class="card-trip-infos">
         <div class="checkout">
           <p>Checkin:</p>
-          <p>Date</p>
+          <p><%= @booking.start_date %></p>
         </div>
         <div class="checkin">
           <p>Checkout:</p>
-          <p>Date</p>
+          <p><%= @booking.end_date %></p>
         </div>
       </div>
       <hr>
