@@ -1,2 +1,48 @@
-<h1>Flats#edit</h1>
-<p>Find me in app/views/flats/edit.html.erb</p>
+  <div class="container">
+    <div class="row mt-2">
+      <div class="col-s-12 col-md-6">
+        <div class="search-form">
+          <h1>Your flat's details</h1>
+          <%= simple_form_for @flat do |f| %>
+            <%= f.input :title %>
+            <%= f.input :description, placeholder: "Write something sexy" %>
+            <%= f.input :address %>
+            <div class="form-row fg justify-content-between">
+              <div class="col-md-4">
+                <%= f.input :guests %>
+              </div>
+              <div class="col-md-4">
+                <%= f.input :bedrooms %>
+              </div>
+              <div class="col-md-4">
+                <%= f.input :beds %>
+              </div>
+            </div>
+            <%= f.input :price_per_night %>
+            <%= f.input :photos, as: :file, input_html: {multiple: true} %>
+            <%= f.submit "Tiny save (if you made a tiny update)", class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-s-12 col-md-6">
+        <ul class="displul">
+        <% @flat.bookings.each do |booking| %>
+        <li>
+          <div class="card-book-list">
+            <%= cl_image_tag booking.user.photo.key %>
+            <div class="card-book-list-infos">
+              <h2><%= booking.user.email %></h2>
+              <div class="great">
+                <div class="texty-cent"> Start<br><%= booking.start_date.to_formatted_s(:short) %></div>
+                <div class="texty-cent">Fins<br/><%= booking.end_date.to_formatted_s(:short) %></div>
+                <div class="texty-cent">Total days<br><%= booking.total_days %></div>
+                <div class="texty-cent">Total price<br>£:<%= booking.stay_cost %></div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
