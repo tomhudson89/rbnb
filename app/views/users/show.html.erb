@@ -1,46 +1,71 @@
-  <div class="bookings">
+  <div class="container">
     <h2>My Bookings</h2>
-            <form method="post">
-              <div class="profile-head">
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Open Bookings</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Past Bookings</a>
-                                </li>
-                            </ul>
-              </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                              <div class="card-product">
-                                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-                                <div class="card-product-infos">
-                                  <h2></h2>
-                                  <p></p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                              <div class="card-product">
-                                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-                                <div class="card-product-infos">
-                                  <h2><%= @flat.title %></h2>
-                                  <p><%= @flat.description %></p>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-  <ul>
+
+  <nav>
+    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
+      href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">current</a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
+      href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">past</a>
+    </div>
+  </nav>
+
+
+
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+
     <% current_user.bookings.each do |booking| %>
-      <li>
-        <%= booking.start_date %>
-      </li>
+      <% if !booking.end_date.past? %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= booking.flat.title %></h2>
+          <p>Booking Start Date<%= booking.start_date %></p>
+          <p>Booking End Date<%= booking.end_date %></p>
+        </div>
+      </div>
+      <% end %>
     <% end %>
-  </ul>
+
+
+  </div>
+
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+    <% current_user.bookings.each do |booking| %>
+      <% if booking.end_date.past? %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= booking.flat.title %></h2>
+          <p>Booking Start Date<%= booking.start_date %></p>
+          <p>Booking End Date<%= booking.end_date %></p>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <h2>Bookings at my properties </h2>
+    <% current_user.flats.each do |flat| %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2><%= flat.title %></h2>
+      </div>
+    </div>
+    <% end %>
+  </div>

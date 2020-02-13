@@ -3,3 +3,4 @@ class Booking < ApplicationRecord
   belongs_to :flat
   has_many :reviews
 end
+
