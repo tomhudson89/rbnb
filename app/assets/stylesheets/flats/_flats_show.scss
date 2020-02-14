@@ -1,0 +1,49 @@
+.info {
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+}
+
+.info {
+  h2 {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  h3 {
+    font-size: 20px;
+    text-align: left;
+    color: $gray;
+  }
+
+  p {
+    font-size: 18px;
+    text-align: left;
+    position: relative;
+    left: 15px;
+  }
+
+  i {
+    font-size: 30px;
+    color: $gray;
+  }
+}
+
+.avatar-image {
+  width: 35px;
+  height: 35px;
+}
+
+.booker {
+  p {
+    font-size: 16px;
+    color: $gray;
+  }
+
+  i {
+    font-size: 30px;
+    color: $gray;
+
+  }
+}
