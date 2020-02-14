@@ -12,3 +12,4 @@ class Booking < ApplicationRecord
     (days * self.flat.price_per_night)
   end
 end
+

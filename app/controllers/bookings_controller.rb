@@ -1,3 +1,6 @@
+require "time"
+
+
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update]
   def index
@@ -42,4 +45,5 @@ class BookingsController < ApplicationController
   def set_flat
     @flat = Flat.find(params[:flats_id])
   end
+
 end
