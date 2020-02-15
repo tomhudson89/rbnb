@@ -26,7 +26,12 @@
         </div>
       </div>
       <div class="col-s-12 col-md-6">
+        <% if @flat.bookings.length < 1 %>
+        <h3 class="book-heading">No bookings for this tiny house</h3>
+        <% else %>
         <h3 class="book-heading">Bookings for this tiny house</h3>
+        <% end %>
+
         <ul class="displul">
         <% @flat.bookings.each do |booking| %>
         <li>
