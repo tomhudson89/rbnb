@@ -1,9 +1,14 @@
 .banner {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('host-banner.jpg');
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('banner.jpg');
-  padding: 200px 0
+}
+
+.banner-edit {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
 }
 
 .banner h1 {

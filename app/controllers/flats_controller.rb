@@ -1,5 +1,5 @@
 class FlatsController < ApplicationController
-  before_action :find_flat, only: [ :show, :edit ]
+  before_action :find_flat, only: [ :show, :edit, :update]
   skip_before_action :authenticate_user!, only: :index
   def index
     if params[:city].present?
@@ -38,7 +38,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:user_id, :address, :guests, :beds, :bedrooms, :description, :price_per_night, :title, photos: [])
+    params.require(:flat).permit(:user, :address, :guests, :beds, :bedrooms, :description, :price_per_night, :title, photos: [])
   end
 
   def find_flat

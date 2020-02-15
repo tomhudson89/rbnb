@@ -19,6 +19,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 4px;
+  margin: 20px 0;
 }
 
 .card-book-list img {
@@ -53,4 +55,9 @@
 
 .displul li {
   margin: 5px 0;
+}
+
+.book-heading {
+  text-align: center;
+  color: white;
 }
