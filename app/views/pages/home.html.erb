@@ -38,14 +38,14 @@
     <% @flats.first(9).each do |flat| %>
       <%= link_to(flat_path(flat)) do %>
         <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <%= cl_image_tag flat.photos.first.key %>
           <div class="card-trip-infos">
             <div>
               <h2><%= flat.title %></h2>
               <p><%= flat.description %></p>
             </div>
             <h2 class="card-trip-pricing">£<%= flat.price_per_night %></h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <%= cl_image_tag flat.user.photo.key, class:"card-trip-user avatar-bordered" %>
           </div>
         </div>
       <% end %>

@@ -17,14 +17,16 @@
 
     <% current_user.bookings.each do |booking| %>
       <% if !booking.end_date.past? %>
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <h2><%= booking.flat.title %></h2>
-          <p>Booking Start Date<%= booking.start_date %></p>
-          <p>Booking End Date<%= booking.end_date %></p>
-        </div>
-      </div>
+        <%= link_to(flat_path(booking.flat)) do %>
+          <div class="card-product">
+            <%= cl_image_tag booking.flat.photos.first.key %>
+            <div class="card-product-infos">
+              <h2><%= booking.flat.title %></h2>
+              <p>Booking Start Date<%= booking.start_date %></p>
+              <p>Booking End Date<%= booking.end_date %></p>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
 
@@ -34,14 +36,16 @@
 
     <% current_user.bookings.each do |booking| %>
       <% if booking.end_date.past? %>
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <h2><%= booking.flat.title %></h2>
-          <p>Booking Start Date<%= booking.start_date %></p>
-          <p>Booking End Date<%= booking.end_date %></p>
-        </div>
-      </div>
+        <%= link_to(flat_path(booking.flat)) do %>
+          <div class="card-product">
+            <%= cl_image_tag booking.flat.photos.first.key %>
+            <div class="card-product-infos">
+              <h2><%= booking.flat.title %></h2>
+              <p>Booking Start Date<%= booking.start_date %></p>
+              <p>Booking End Date<%= booking.end_date %></p>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
 
@@ -59,11 +63,13 @@
 
     <h2>Bookings at my properties </h2>
     <% current_user.flats.each do |flat| %>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2><%= flat.title %></h2>
-      </div>
-    </div>
+      <%= link_to(edit_flat_path(flat)) do %>
+        <div class="card-product">
+          <%= cl_image_tag flat.photos.first.key %>
+          <div class="card-product-infos">
+            <h2><%= flat.title %></h2>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
