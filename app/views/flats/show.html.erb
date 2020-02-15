@@ -1,7 +1,7 @@
 <% if @flat.user_id == current_user.id %>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @flat.photos.first.key %>);">
     <div class="container">
-      <button type="button" class="btn btn-danger float-right">Go to my profile</button>
+      <%= link_to "Go to my profile", user_path(current_user), class: "btn btn-danger float-right submit-button" %>
     </div>
   </div>
   <div class="main-container">
