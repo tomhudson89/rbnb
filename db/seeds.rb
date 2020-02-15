@@ -9,7 +9,7 @@ require "open-uri"
 require 'faker'
 # puts "Destroy users"
 # User.destroy_all if Rails.env.development?
-address = ["Marylebone Rd, Marylebone, London NW1 5LR", "Buckingham Palace Westminster London SW1E 6LA", "10 Downing St, Westminster, London SW1A 2AA", " The Queen's Walk, Bishop's, London SE1 7PB", "184 Camden High St, Camden Town, London NW1 8QP"]
+address = ["Marylebone Rd, Marylebone, London NW1 5LR", "Buckingham Palace Westminster London SW1E 6LA", "10 Downing St, Westminster, London SW1A 2AA", "1 Ropley Street, London E2 7SB", "184 Camden High St, Camden Town, London NW1 8QP"]
 user_photos = ['https://res.cloudinary.com/ddhmqwylk/image/upload/v1581176970/nicolas-horn-MTZTGvDsHFY-unsplash_xpfqge.jpg',
   'https://res.cloudinary.com/ddhmqwylk/image/upload/v1581176969/ben-parker-NohB3FJSY90-unsplash_bgq5zz.jpg',
 'https://res.cloudinary.com/ddhmqwylk/image/upload/v1581176969/ben-parker-OhKElOkQ3RE-unsplash_cbbhi5.jpg',
