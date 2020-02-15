@@ -54,6 +54,7 @@
         <p><strong>Flat address:</strong></p>
       </div>
       <p><%= @flat.address %></p>
+      <%= image_tag "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(#{@flat.longitude},#{@flat.latitude})/#{@flat.longitude},#{@flat.latitude},15/500x300?access_token=pk.eyJ1IjoidG9taHVkc29uODkiLCJhIjoiY2s0MGN4NDJvMDBmZTNlc2Y3YzdheG02ciJ9.CbThae_pau01vd-Br--z3w" %>
     </div>
     <div class="booker">
         <%= render 'bookings/form', booking: Booking.new, flat: @flat %>
