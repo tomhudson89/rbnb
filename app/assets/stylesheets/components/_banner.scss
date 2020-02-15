@@ -47,3 +47,11 @@
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('host.jpg');
   padding-top: 100px;
 }
+
+.host-banner-two {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('success.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
