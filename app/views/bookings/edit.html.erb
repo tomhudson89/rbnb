@@ -1,101 +1,106 @@
 <div class="container">
   <div class="promotion-banner d-flex" style="background-color: $green;">
     <i class="far fa-star star-icon"></i>
-    <div>
-      <p>This flat is a rare gem!</p>
+    <div class="gem-text">
+      <p class="pt-3">This flat is a rare, tiny gem!</p>
       <p>You´re lucky you have been able to book it at this rate.</p>
     </div>
   </div>
-
   <div class="row booking-info">
     <div class="col-md-6">
       <div class="about-your-trip">
-        <h2>About your trip</h2>
-        <br>
-        <p>Who is coming?</p>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Number of guests
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">1 guest</a>
-            <a class="dropdown-item" href="#">2 guests</a>
-            <a class="dropdown-item" href="#">3 guests</a>
-          </div>
-        </div>
+        <p class="pb-2">Say hello to your guests and tell them why you are coming:</p>
         <form>
-          <br>
-          <br>
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Say hello to your guests and tell them why you are coming:</label>
             <textarea class="form-control" id="messagetoguests" rows="3"></textarea>
           </div>
         </form>
         <div class="house-rules">
-          <p class="text-center"><strong>XXX´s House rules</strong></p>
-          <div class="container justify-content-between">
-            <div class="rules">
-              <div class=" d-flex">
+          <div class="house-icon">
+            <i class="fas fa-house-damage house-rules-icon"></i>
+          </div>
+          <h2 class="text-center"><strong>House rules</strong></h2>
+          <div class="container rules">
+            <div class="rules-items-icons">
+              <div class="rules-content">
                 <p>No smoking</p>
+              </div>
+              <div class="rules-action">
                 <i class="fas fa-check"></i>
               </div>
-              <div class=" d-flex">
-                <p>No talking</p>
+            </div>
+            <div class="rules-items-icons">
+              <div class="rules-content">
+                <p>Not suitable for pets</p>
+              </div>
+              <div class="rules-action">
                 <i class="fas fa-check"></i>
               </div>
-              <div class=" d-flex">
-                <p>No big people</p>
+            </div>
+            <div class="rules-items-icons">
+              <div class="rules-content">
+                <p>No parties or events</p>
+              </div>
+              <div class="rules-action">
                 <i class="fas fa-check"></i>
               </div>
-              <div class=" d-flex">
-                <p>No eating after 10pm</p>
+            </div>
+            <div class="rules-items-icons">
+              <div class="rules-content">
+                <p>May not be suitable for very tall people </p>
+              </div>
+              <div class="rules-action">
                 <i class="fas fa-check"></i>
               </div>
             </div>
           </div>
-        </div class="text-center">
-        <%= link_to "Book", root_path, class: "btn btn-primary mt-3 px-5 submit-button" %>
+        </div>
+        <br>
+          <%= link_to "Go to my profile", user_path(current_user), class: "btn btn-danger d-flex profile-button" %>
       </div>
     </div>
-  <div class="col-md-5 offset-md-1">
-    <div class="flat-info-card">
-    <div class="card-trip card-trip-booking">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <p>Hosted by XXX</p>
-          <h2><%= @booking.flat.title %></h2>
-          <p><%= @booking.flat.address %></p>
-        </div>
-        <h2 class="card-trip-pricing">$<%= @booking.flat.price_per_night %></h2>
-        <%= cl_image_tag @booking.user.photo.key, class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      </div>
-      <hr>
-      <div class="card-trip-infos">
-        <div class="checkout">
-          <p>Checkin:</p>
-          <p><%= @booking.start_date %></p>
-        </div>
-        <div class="checkin">
-          <p>Checkout:</p>
-          <p><%= @booking.end_date %></p>
-        </div>
-      </div>
-      <hr>
-      <div class="card-trip-infos">
-        <div class="price-items">
-          <p>$29 x 4 nights</p>
-          <p>Service fee</p>
-          <p>Occupancy taxes</p>
-          <br>
-          <p><strong>Total:</strong></p>
-        </div>
-        <div class="price-per-item">
-          <p>$29</p>
-          <p>$29</p>
-          <p>$29</p>
-          <br>
-          <p><strong>$100</strong></p>
+    <div class="col-md-5 offset-md-1">
+      <div class="flat-info-card">
+        <div class="card-trip card-trip-booking">
+          <%= cl_image_tag @booking.flat.photos.first.key %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= @booking.flat.title %></h2>
+              <p><%= @booking.flat.address %></p>
+            </div>
+            <h2 class="card-trip-pricing">$<%= @booking.flat.price_per_night %></h2>
+            <%= cl_image_tag @booking.flat.user.photo.key, class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          </div>
+          <hr>
+          <div class="card-trip-infos">
+            <div class="checkout">
+              <p><strong>Checkin:</strong></p>
+              <p><%= @booking.start_date %></p>
+            </div>
+            <div class="checkin">
+              <p><strong>Checkout:</strong></p>
+              <p><%= @booking.end_date %></p>
+            </div>
+          </div>
+          <hr>
+          <div class="card-trip-infos">
+            <div class="price-items">
+              <div><p class="pr-4"> Number of nights:</p></div>
+              <div><p> Price per night:</p></div>
+              <div><p> Service fee:</p></div>
+              <div><p> Occupancy taxes:</p></div>
+              <br>
+              <p><strong>Total:</strong></p>
+            </div>
+            <div class="price-per-item">
+              <p><%= total_days = @booking.total_days %></p>
+              <p><%= price_per_night = @booking.flat.price_per_night %></p>
+              <p><%= service_fee = (@booking.flat.price_per_night * 0.1).round(2) %></p>
+              <p><%= taxes = (@booking.flat.price_per_night * 0.15).round(2) %></p>
+              <br>
+              <p><strong>$<%= (total_days * price_per_night) + service_fee + taxes%></strong></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
