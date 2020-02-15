@@ -3,7 +3,7 @@ class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
     if params[:city].present?
-      @flats = Flat.where("address ILIKE ?", "%#{params[:city]}%")
+      @flats = Flat.search_by_address(params[:city])
     else
       @flats = Flat.geocoded
     end
