@@ -1,3 +1,4 @@
+<div class="banner-edit" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @flat.photos.first.key %>);">>
   <div class="container">
     <div class="row mt-2">
       <div class="col-s-12 col-md-6">
@@ -25,6 +26,7 @@
         </div>
       </div>
       <div class="col-s-12 col-md-6">
+        <h3 class="book-heading">Bookings for this tiny house</h3>
         <ul class="displul">
         <% @flat.bookings.each do |booking| %>
         <li>
@@ -46,3 +48,4 @@
       </div>
     </div>
   </div>
+</div>
